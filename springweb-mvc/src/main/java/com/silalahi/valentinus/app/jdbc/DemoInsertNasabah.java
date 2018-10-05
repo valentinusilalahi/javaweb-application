@@ -17,6 +17,7 @@ public class DemoInsertNasabah {
 		n.setEmail("valentinus.silalahi@gmail.com");
 
 		NasabahDao dao = new NasabahDao();
-		dao.insert(n);
+//		dao.insert(n);
+		dao.insertTransaksi();
 	}
 }
