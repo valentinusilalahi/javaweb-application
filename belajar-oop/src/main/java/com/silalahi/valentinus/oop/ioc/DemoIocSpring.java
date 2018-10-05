@@ -8,5 +8,8 @@ public class DemoIocSpring {
 		ApplicationContext springContainer = new ClassPathXmlApplicationContext("training-ioc.xml");
 		NasabahDaoIoc nasabahDao = (NasabahDaoIoc) springContainer.getBean("nd");
 		nasabahDao.simpan();
+		
+		RekeningDao rDao = springContainer.getBean(RekeningDao.class);
+		rDao.simpan();
 	}
 }

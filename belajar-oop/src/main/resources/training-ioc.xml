@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="koneksiDatabase" class="com.silalahi.valentinus.oop.ioc.KoneksiDatabase">
-		<property name="url" value="jdbc:postgresql://localhost/javawebapp" />
+	<bean id="koneksiDatabase2"
+		class="com.silalahi.valentinus.oop.ioc.KoneksiDatabase">
+		<property name="url"
+			value="jdbc:postgresql://localhost/demotest" />
+		<property name="username" value="valent" />
+		<property name="password" value="tinus" />
+	</bean>
+
+	<bean id="koneksiDatabase"
+		class="com.silalahi.valentinus.oop.ioc.KoneksiDatabase">
+		<property name="url"
+			value="jdbc:postgresql://localhost/javawebapp" />
 		<property name="username" value="valentinus" />
 		<property name="password" value="admin1!" />
 	</bean>
-	
-	<bean id="nd" class="com.silalahi.valentinus.oop.ioc.NasabahDaoIoc">
+
+	<bean id="nd"
+		class="com.silalahi.valentinus.oop.ioc.NasabahDaoIoc">
 		<constructor-arg ref="koneksiDatabase" />
 	</bean>
+
+	<context:component-scan
+		base-package="com.silalahi.valentinus.oop.ioc" />
 
 </beans>
