@@ -10,6 +10,9 @@ public class Nasabah {
 		jumlahNasabah = jumlahNasabah + 1;
 	}
 
+	public Nasabah() {
+	}
+
 	public String getNama() {
 		System.out.println(nama + " adalah nasabah ke- " + jumlahNasabah);
 		return this.nama;
@@ -17,7 +20,8 @@ public class Nasabah {
 
 	public static void showJumlahNasabah() {
 		System.out.println("Jumlah nasabah saat ini adalah : " + jumlahNasabah);
-		// System.out.println(nama); //instance variable tidak bisa digunakan di static method
+		// System.out.println(nama); //instance variable tidak bisa digunakan di static
+		// method
 	}
 
 	public String getNomor() {
@@ -39,5 +43,5 @@ public class Nasabah {
 	public void setNama(String nama) {
 		this.nama = nama;
 	}
-	
+
 }
