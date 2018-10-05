@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="koneksiDatabase" class="com.silalahi.valentinus.oop.ioc.KoneksiDatabase">
+		<property name="url" value="jdbc:postgresql://localhost/javawebapp" />
+		<property name="username" value="valentinus" />
+		<property name="password" value="admin1!" />
+	</bean>
+	
+	<bean id="nd" class="com.silalahi.valentinus.oop.ioc.NasabahDaoIoc">
+		<constructor-arg ref="koneksiDatabase" />
+	</bean>
+
+</beans>
